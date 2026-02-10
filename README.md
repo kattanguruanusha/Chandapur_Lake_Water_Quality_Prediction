@@ -1,4 +1,5 @@
 📌 Project Title
+
 Chandapura Lake Water Quality Prediction using Machine Learning
 📖 Project Overview
 This project focuses on analyzing and predicting the water quality of Chandapura Lake, Bengaluru using machine learning techniques. The goal is to study historical water quality parameters, identify pollution trends, and predict future water quality indicators to support environmental monitoring and decision-making.

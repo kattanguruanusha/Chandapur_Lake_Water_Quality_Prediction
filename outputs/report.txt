@@ -1,0 +1,93 @@
+🌊 Chandrapur Lake Water Quality Prediction – Report
+Author: Anusha
+Date: 2026-02-01
+Project: ML-based Spatio-Temporal Water Quality Forecasting
+1. Introduction
+Chandrapur Lake is an important water body that requires constant monitoring to ensure safe water quality. This project aims to predict water quality indices using a Spatio-Temporal Transformer model, providing early warning for potential pollution events.
+Objectives:
+Analyze historical water quality data.
+Build a predictive model to forecast water quality indices.
+Develop a Streamlit dashboard for interactive visualization.
+Provide actionable insights for local authorities.
+2. Dataset
+Raw Data: Collected from monitoring stations in Chandrapur Lake. Includes features such as temperature, pH, dissolved oxygen, turbidity, and other chemical parameters.
+Cleaned Data: Preprocessed to remove missing values, handle outliers, and normalize features.
+Folder Structure:
+data/
+  raw_data.csv
+  cleaned_data.csv
+models/
+  best_model.pth
+notebooks/
+  data_cleaning.ipynb
+  eda.ipynb
+  model_experiments.ipynb
+outputs/
+  cleaned_data.csv
+  predictions.csv
+  water_quality_forecast.png
+src/
+  __init__.py
+  model.py
+app.py
+requirements.txt
+README.md
+3. Methodology
+3.1 Data Cleaning
+Missing values filled with mean values.
+Outliers handled using interquartile range (IQR).
+Features normalized to [0,1] range.
+3.2 Exploratory Data Analysis (EDA)
+Correlation analysis between features and water quality index.
+Temporal trends analyzed using line plots.
+Seasonal variations observed over 12-month periods.
+3.3 Model: Spatio-Temporal Transformer
+Model Architecture:
+Input Dimension: 8 features
+Hidden Dimension: 64
+Output Dimension: 4
+Transformer Encoder with 2 layers and 4 attention heads
+Takes time-series sequences of water quality features as input
+Advantages:
+Captures temporal dependencies between months.
+Learns feature interactions across time.
+Provides accurate multi-step forecasting.
+Training & Evaluation:
+Trained on historical data using PyTorch.
+Model weights saved as models/best_model.pth.
+Evaluated using RMSE and MAE metrics.
+4. Streamlit Dashboard
+Interactive Sliders: Select forecast months and risk thresholds.
+Predicted Water Quality Plot: Shows forecasted values for upcoming months.
+Raw Predictions Table: Displays numerical values for reference.
+Outputs Saved: Predictions and plots stored in outputs/ folder.
+Example Dashboard Outputs:
+Line chart of predicted water quality indices.
+CSV of predicted values: outputs/predictions.csv.
+Forecast plot: outputs/water_quality_forecast.png.
+5. Results
+Predicted Water Quality Index
+Month
+1
+0.35
+2
+0.37
+3
+0.40
+...
+...
+12
+0.52
+Predictions indicate slight increase in pollution risk in later months.
+Dashboard allows quick analysis and visualization.
+
+6. Conclusion
+Successfully built a predictive model for Chandrapur Lake water quality.
+Streamlit app provides interactive forecasts for stakeholders.
+The pipeline is end-to-end: from data cleaning → model → predictions → dashboard → outputs.
+Outputs can be stored as CSV and PNG for reports.
+
+Future Work:
+Integrate real-time monitoring sensors.
+Add additional features like rainfall, industrial effluents, and upstream water quality.
+Improve model accuracy with larger datasets.
